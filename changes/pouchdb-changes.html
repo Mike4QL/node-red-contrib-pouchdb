@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pouchdb-changes', {
+        category: 'storage',
+        color: '#a6bbcf',
+       defaults: {
+           name: {value: ""},
+           server: {value:"", type: "pouchdb-server"}
+       },
+        inputs: 0,
+        outputs: 1,
+        label: function() {
+            return this.name || "pouchdb-changes";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="pouchdb-changes">
+   <div class="form-row">
+        <label for="node-input-name"> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server">Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+</script> 
+
+<script type="text/x-red" data-help-name="pouchdb-changes">
+    <p>Monitors a synchronised PouchDb database for changes.</p>
+    <p>Sends a message with details of the change which has been detected.  See PouchDb API for details</p>
+</script>

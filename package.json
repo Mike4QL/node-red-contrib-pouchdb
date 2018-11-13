@@ -1,0 +1,31 @@
+{
+  "name": "node-red-contrib-pouchdb",
+  "version": "0.0.1",
+  "description": "Provides Nodes to interface with PouchDB Library",
+  "scripts": {
+    "test": "mocha \"test/**/*_spec.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mike4QL/node-red-contrib-pouchdb.git"
+  },
+  "author": "Mike Robertson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mike4QL/node-red-contrib-pouchdb/issues"
+  },
+  "homepage": "https://github.com/Mike4QL/node-red-contrib-pouchdb#readme",
+  "node-red": {
+    "nodes": {
+      "pouchdb-get": "get/pouchdb-get.js",
+      "pouchdb-put": "put/pouchdb-put.js",
+      "pouchdb-server": "server/pouchdb-server.js",
+      "pouchdb-changes": "changes/pouchdb-changes.js"
+    }
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "pouchdb": "^7.0.0",
+    "pouchdb-find": "^7.0.0"
+  }
+}

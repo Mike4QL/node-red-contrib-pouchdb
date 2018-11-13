@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pouchdb-put', {
+        category: 'storage',
+        color: '#a6bbcf',
+       defaults: {
+           name: {value: ""},
+           server: {value:"", type: "pouchdb-server"}
+       },
+        inputs: 1,
+        outputs: 1,
+        label: function() {
+            return this.name || "pouchdb-put";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="pouchdb-put">
+   <div class="form-row">
+        <label for="node-input-name"> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server">Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+</script> 
+
+<script type="text/x-red" data-help-name="pouchdb-put">
+    <p>Adds or Updates a single document in the PouchDB database.</p>
+    <p>The document is in msg.payload.</p>
+</script>

@@ -1,0 +1,12 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Restart Node-Red",
+            "type": "shell",
+            "command": "pm2 restart red",
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pouchdb-get', {
+        category: 'storage',
+        color: '#a6bbcf',
+       defaults: {
+           name: {value: ""},
+           server: {value:"", type: "pouchdb-server"}
+       },
+        inputs: 1,
+        outputs: 1,
+        label: function() {
+            return this.name || "pouchdb-get";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="pouchdb-get">
+   <div class="form-row">
+        <label for="node-input-name"> Name</label>
+        <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server">Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+</script> 
+
+<script type="text/x-red" data-help-name="pouchdb-get">
+    <p>Gets a single document from the PouchDB database.</p>
+    <p>The _id of the document is in msg.payload.</p>
+</script>

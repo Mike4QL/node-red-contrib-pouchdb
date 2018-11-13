@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pouchdb-server', {
+        category: 'config',
+        defaults: {
+            database: {value: "node-red-db", required: true},
+            dbUrl: {value:""},
+            dbUser: {value: ""},
+            dbPwd: {value: ""},
+            dbSync: {value:""},
+            dbSyncUser: {value: ""},
+            dbSyncPwd: {value: ""}
+
+        },
+        label: function() {
+            return this.database || "pouchdb-server";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="pouchdb-server">
+    <div class="form-row">
+        <label for="node-config-input-database"><i class="icon-bookmark"></i> Database</label>
+        <input type="text" id="node-config-input-database">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-dbUrl"><i class="icon-bookmark"></i> URL</label>
+        <input type="text" id="node-config-input-dbUrl"> 
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-dbUser"><i class="icon-bookmark"></i> User</label>
+        <input type="text" id="node-config-input-dbUser"> 
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-dbPwd"><i class="icon-bookmark"></i> Password</label>
+        <input type="text" id="node-config-input-dbPwd"> 
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-dbSync"><i class="icon-bookmark"></i> Sync URL</label>
+        <input type="text" id="node-config-input-dbSync"> 
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-dbSyncUser"><i class="icon-bookmark"></i> Sync User</label>
+        <input type="text" id="node-config-input-dbSyncUser"> 
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-dbSyncPwd"><i class="icon-bookmark"></i> Sync Password</label>
+        <input type="text" id="node-config-input-dbSyncPwd"> 
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="pouchdb-server">
+    Config Node to handle communication with PouchDB.
+    <h4>Properties</h4>
+    Database: The name of the database.
+    URL: The URL of the server holding the database. e.g. http://server-name:5984.  Leave blank to use a local database.
+    Sync URL: The URL of the server we want to sync this database with.
+</script>
