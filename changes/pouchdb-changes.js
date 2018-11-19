@@ -7,6 +7,11 @@ module.exports = function (RED) {
 
         node.server = RED.nodes.getNode(config.server);
 
+        node.status({fill: "red", shape: "ring", text: "not connected"});
+        node.server.on("ready", function(info) {
+            node.status({fill: "green", shape: "dot", text: info.db_name});
+        });
+
         node.server.on('sync-change', function (info) {
             // Only interested in 'pull' changes
             if (info.direction === 'pull') {

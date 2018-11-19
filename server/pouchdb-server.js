@@ -31,6 +31,13 @@ module.exports = function (RED) {
             }
         }
 
+        // Get the database info and save it in the global context
+        node.db.info().then(function(info) {
+            RED.log.info("Connected to database, " + info.db_name);
+            node.context().global.set('dbinfo', info);
+            node.emit("ready", info);
+        });
+
         // Start Syncing if the Sync database is specified.
         if (config.dbSync) {
             var syncDbOptions = { auth: { username: config.dbSyncUser, password: config.dbSyncPwd } };
